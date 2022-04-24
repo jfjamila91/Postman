@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "6a3e8b83-2f97-43fa-9bd8-b2363da423ad",
+		"name": "Get customers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get customers from customers table",
+			"item": [
+				{
+					"name": "scenario_01:get customer by valid firstName",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": \"358\",\n        \"customerNumber\": 177,\n        \"customerName\": \"Osaka Souveniers Co.\",\n        \"contactLastName\": \"Hassan\",\n        \"contactFirstName\": \"Rabiul\",\n        \"phone\": \"+81 06 6342 5555\",\n        \"addressLine1\": \"1-6-20 Dojima\",\n        \"addressLine2\": null,\n        \"city\": \"Kita-ku\",\n        \"state\": \"Osaka\",\n        \"postalCode\": \" 530-0003\",\n        \"country\": \"Japan\",\n        \"salesRepEmployeeNumber\": 1621,\n        \"creditLimit\": 81200\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/CustomersDetails?contactFirstName=Julie",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"CustomersDetails"
+							],
+							"query": [
+								{
+									"key": "contactFirstName",
+									"value": "Julie"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "scenario_02:get customer by invalid firstName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/CustomersDetails?contactFirstName=\"\"",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"CustomersDetails"
+							],
+							"query": [
+								{
+									"key": "contactFirstName",
+									"value": "\"\""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "scenario_03:get customer by valid lastName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/CustomersDetails?contactLastName=Oeztan",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"CustomersDetails"
+							],
+							"query": [
+								{
+									"key": "contactLastName",
+									"value": "Oeztan"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "scenario_04:get customer by invalid lastName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/CustomersDetails?contactLastName=",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"CustomersDetails"
+							],
+							"query": [
+								{
+									"key": "contactLastName",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "scenario_05:get customer by valid city name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"id\": \"858\",\n        \"customerNumber\": 177,\n        \"customerName\": \"Osaka Souveniers Co.\",\n        \"contactLastName\": \"Hassan\",\n        \"contactFirstName\": \"Rabiul\",\n        \"phone\": \"+81 06 6342 5555\",\n        \"addressLine1\": \"1-6-20 Dojima\",\n        \"addressLine2\": null,\n        \"city\": \"Kita-ku\",\n        \"state\": \"Osaka\",\n        \"postalCode\": \" 530-0003\",\n        \"country\": \"Japan\",\n        \"salesRepEmployeeNumber\": 1621,\n        \"creditLimit\": 81200\n    }\n    \n        ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/CustomersDetails?city=Lisboa",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"CustomersDetails"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "Lisboa"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "scenario_06:get customer by city null",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/CustomersDetails?country=null",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"CustomersDetails"
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": "null"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

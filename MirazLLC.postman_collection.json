@@ -1,0 +1,270 @@
+{
+	"info": {
+		"_postman_id": "693a98da-2062-4076-864d-ebe53b6ce2c2",
+		"name": "MirazLLC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Employees details",
+			"item": [
+				{
+					"name": "scenario_01:Get all employees details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/EmployeeDetails",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"EmployeeDetails"
+							],
+							"query": [
+								{
+									"key": "lastName",
+									"value": "Patterson",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "scenario_02:insert a new record",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"id\": 12345,\n            \"employeeNumber\": 1002,\n            \"lastName\": \"jamila\",\n            \"firstName\": \"jannatul\",\n            \"extension\": \"n5800\",\n            \"email\": \"dnurphy@classicmodelcars.com\",\n            \"officeCode\": \"4\",\n            \"reportsTo\": null,\n            \"jobTitle\": \"accountant\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/EmployeeDetails",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"EmployeeDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "scenario_03:update an existing record",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"id\": 234,\n        \"employeeNumber\": 1002,\n        \"lastName\": \"Muruf\",\n        \"firstName\": \"Daane\",\n        \"extension\": \"n5800\",\n        \"email\": \"dnurphy@classicmodelcars.com\",\n        \"officeCode\": \"4\",\n        \"reportsTo\": null,\n        \"jobTitle\": \"accountant\",\n           \n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/EmployeeDetails",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"EmployeeDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "scenario_04:delete a request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/EmployeeDetails/?lastName=Patterson",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"EmployeeDetails",
+								""
+							],
+							"query": [
+								{
+									"key": "lastName",
+									"value": "Patterson"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customers details",
+			"item": [
+				{
+					"name": "scenario_01:Get all customers details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/CustomersDetails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"CustomersDetails"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "scenario_02:insert a new request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n         \"id\": \"358\",\n        \"customerNumber\": 177,\n        \"customerName\": \"Osaka Souveniers Co.\",\n        \"contactLastName\": \"Hassan\",\n        \"contactFirstName\": \"Rabiul\",\n        \"phone\": \"+81 06 6342 5555\",\n        \"addressLine1\": \"1-6-20 Dojima\",\n        \"addressLine2\": null,\n        \"city\": \"Kita-ku\",\n        \"state\": \"Osaka\",\n        \"postalCode\": \" 530-0003\",\n        \"country\": \"Japan\",\n        \"salesRepEmployeeNumber\": 1621,\n        \"creditLimit\": 81200\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/CustomersDetails",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"CustomersDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "scenario_03:update an existing record",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"customerNumber\": 167,\n        \"customerName\": \"hernia kabob\",\n        \"contactLastName\": \"Oeztan\",\n        \"contactFirstName\": \"Veysel\",\n        \"phone\": \"+47 2267 3215\",\n        \"addressLine1\": \"Brehmen St. 121\",\n        \"addressLine2\": \"PR 334 Sentrum\",\n        \"city\": \"new york\",\n        \"state\": \"null\",\n        \"postalCode\": \"N 5804\",\n        \"country\": \"Norway\",\n        \"salesRepEmployeeNumber\": 1504,\n        \"creditLimit\": 96800\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/CustomersDetails",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"CustomersDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "scenario_04:delete a request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/CustomersDetails?id=358",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"CustomersDetails"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "358"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment details",
+			"item": [
+				{
+					"name": "scenario_01:Get all payment details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/Payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "scenario_02:insert a new request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n            \"customerNumber\": 303,\n            \"checkNumber\": \"8Q330336\",\n            \"paymentDate\": \"2022-10-19\",\n            \"amount\": 8066.78\n            \n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/Payment details",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"Payment details"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
